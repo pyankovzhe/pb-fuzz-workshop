@@ -41,6 +41,8 @@ func (h *handler) run(input *bufio.Reader, output io.WriteCloser) {
 			return
 		}
 
+		line = line[:line]
+
 		parts := strings.Split(line, " ")
 		switch parts[0] {
 		case "PING":

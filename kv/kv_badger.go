@@ -8,7 +8,7 @@ import (
 	badger "github.com/dgraph-io/badger/v3"
 )
 
-const cacheSize = 3000
+const cacheSize = 30000
 
 type badgerKV struct {
 	db       *badger.DB

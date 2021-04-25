@@ -1,0 +1,10 @@
+panic: not equal!
+
+goroutine 1 [running]:
+github.com/GopherConRu/pb-fuzz-workshop.Fuzz(0x5c10000, 0x4, 0x4, 0x3)
+	/Users/pyankov/pb-fuzz-workshop/reverse_fuzz.go:20 +0x11d7
+go-fuzz-dep.Main(0xc0001b9f70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x2a6
+main.main()
+	github.com/GopherConRu/pb-fuzz-workshop/go.fuzz.main/main.go:15 +0x65
+exit status 2

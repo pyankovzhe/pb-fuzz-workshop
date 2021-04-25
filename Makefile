@@ -21,8 +21,12 @@ fuzz-reverse:                ## Fuzz reverse function using dev.fuzz.
 	go test -v -race -fuzz=FuzzReverse -fuzztime=50000x -parallel=$(PROCS)
 
 fuzz-protocol:               ## Fuzz protocol using dev.fuzz.
-	cd protocol && go test -v -race -fuzz=FuzzHandler -parallel=$(PROCS)
+	cd protocol && go test -v -race -fuzz=FuzzHandler -parallel=$(PROCS) -timeout=10s
 
 gofuzz-protocol:             ## Fuzz protocol using dvyukov/go-fuzz.
 	cd protocol && ../bin/go-fuzz-build -race
 	cd protocol && ../bin/go-fuzz -procs=$(PROCS)
+
+gofuzz-reverse:              ## Fuzz reverse function using dvyukov/go-fuzz.
+	./bin/go-fuzz-build -race
+	./bin/go-fuzz -procs=$(PROCS)
